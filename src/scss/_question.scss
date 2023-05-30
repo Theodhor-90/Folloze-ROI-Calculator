@@ -1,0 +1,29 @@
+.question {
+    margin-bottom: 40px;
+    & .title {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 42px;
+        color: #2C3D59;
+        margin-bottom: 8px;
+        @media screen and (max-width: map-get($grid-breakpoints, md)){
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+    & .description {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: #6b7e9d;
+        @media screen and (max-width: map-get($grid-breakpoints, md)){
+            font-size: 16px;
+        }
+    }
+}
+
+.initial-question{
+    @media screen and (min-width: map-get($grid-breakpoints, lg)){
+        max-width: 568px;
+    }
+}

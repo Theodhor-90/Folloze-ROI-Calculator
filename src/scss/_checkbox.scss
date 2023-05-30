@@ -1,0 +1,115 @@
+.selection {
+    display: flex;
+}
+
+.checkbox {
+    padding: 16px 16px 32px;
+    background: $white;
+    color: black;
+    width: 240px;
+    height: 240px;
+    border: 1px solid #2c3d59;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    & .option-status {
+        display: flex;
+        justify-content: flex-end;
+        & .icon-container {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #c2c2c2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            transition: all 0.3s;
+        }
+    }
+    & .option-icon {
+        display: flex;
+        justify-content: center;
+        & .icon-container {
+            width: 105px;
+            height: 80px;
+        }
+    }
+    & .option-text {
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+    }
+    &.checked {
+        background-color: #f3f9fd;
+        box-shadow: 0px 32px 64px rgba(79, 94, 113, 0.07),
+            0px 8px 16px rgba(79, 94, 113, 0.08),
+            0px 2px 4px rgba(79, 94, 113, 0.11),
+            0px 0px 2px rgba(79, 94, 113, 0.12);
+        & .option-status {
+            & .icon-container {
+                background-color: #28a42f;
+            }
+        }
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        &:first-child {
+            margin-right: 32px;
+        }
+        &:last-child {
+            margin-left: 32px;
+        }
+        & .option-icon {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, lg)) {
+    .selection {
+        display: block;
+    }
+    .checkbox {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 16px;
+        margin: 16px 0;
+        & .flex-mobile {
+            display: flex;
+            align-items: center;
+        }
+        & .option-text {
+            margin-left: 24px;
+        }
+        & .option-icon {
+            & .icon-container {
+                width: 58px;
+                height: 50px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
+    .checkbox {
+        align-items: flex-start;
+        & .flex-mobile {
+            width: 100%;
+            flex-direction: column;
+        }
+        & .option-text {
+            margin-left: 0;
+        }
+        & .option-icon {
+            & .icon-container {
+                width: 46px;
+                height: 40px;
+            }
+        }
+    }
+}

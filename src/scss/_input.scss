@@ -1,0 +1,143 @@
+.input-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    &.numerical {
+        @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            position: relative;
+            height: 112px;
+            & .control {
+                position: absolute;
+                bottom: -36px;
+                &.minus {
+                    left: 0;
+                }
+                &.plus {
+                    right:  0;
+                }
+            }
+        }
+    }
+    & .input,
+    &.control {
+        flex-basis: 0;
+    }
+
+    & .control {
+        height: 40px;
+        width: 40px;
+        border-radius: 50px;
+        border: 2px solid $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        & .icon-container {
+            width: 24px;
+            height: 24px;
+        }
+
+        &:first-child {
+            margin-right: 40px;
+        }
+
+        &:last-child {
+            margin-left: 40px;
+        }
+    }
+
+    & .input {
+        background: $white;
+        border: 1px solid #627d98;
+        border-radius: 4px;
+        padding: 16px;
+        flex-grow: 1;
+
+        & .symbol {
+            flex-basis: 0;
+            flex-grow: 0;
+        }
+        & input {
+            flex-basis: 0;
+            flex-grow: 1;
+            padding: 0 8px;
+            border: none;
+            outline: none;
+        }
+        & input::-webkit-inner-spin-button,
+        & input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        & .symbol,
+        & input {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            color: $black;
+            @media screen and (max-width: map-get($grid-breakpoints, md)) {
+                font-size: 16px;
+            }
+        }
+        &.has-error {
+            border-color: #cd2b26;
+        }
+    }
+}
+
+input[type='range'] {
+    appearance: none;
+    height: 12px;
+    border-radius: 100px;
+    width: 100%;
+    padding: 0;
+    margin: 11px 0 0;
+    background-color: #ececec;
+    &::-webkit-progress-bar {
+        background-color: red;
+    }
+    &::-webkit-slider-thumb {
+        appearance: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid #f0f0f0;
+        background-color: $white;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    &:focus {
+        ::-webkit-slider-thumb {
+            outline: 1px dashed black;
+            outline-offset: 2px;
+        }
+    }
+}
+
+.datalist {
+    display: flex;
+    justify-content: space-between;
+    writing-mode: horizontal-tb;
+    width: 100%;
+    margin-top: 14px;
+
+    & .option-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & option {
+            padding: 0;
+            min-width: 30px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        & span {
+            display: flex;
+            align-items: center;
+            height: 8px;
+            border-left: 0.5px solid black;
+        }
+    }
+}

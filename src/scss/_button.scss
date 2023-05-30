@@ -1,0 +1,67 @@
+.button {
+    font-weight: 600;
+    padding: map-get($map: $spacers, $key: 3) map-get($map: $spacers, $key: 4);
+    border-radius: 6px;
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 16px;
+    border: 1px solid transparent;
+    margin-left: map-get($map: $spacers, $key: 2);
+    margin-right: map-get($map: $spacers, $key: 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: map-get($grid-breakpoints, lg)){
+        padding: map-get($map: $spacers, $key: 3);
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, md)){
+        font-size: 16px;
+    }
+    &.inverted {
+        flex-direction: row-reverse;
+        & .button-icon {
+            margin-right: map-get($map: $spacers, $key: 2);
+        }
+    }
+    &.no-text {
+        & .button-icon {
+            margin-left: 0;
+        }
+    }
+    & .button-icon {
+        margin-left: map-get($map: $spacers, $key: 2);
+        width: 24px;
+        height: 24px;
+    }
+    &:active {
+        transition: none;
+    }
+    &.primary {
+        background-color: $primary;
+        &:hover {
+            background-color: $primary-light;
+        }
+        &:active {
+            background-color: $primary-strong;
+        }
+    }
+    &.secondary{
+        border-color: $primary-strong;
+        color: $primary-strong;
+        background-color: white;
+        transition: none;
+    }
+    &.disabled {
+        pointer-events: none;
+        background-color: transparent;
+        color: $neutral;
+        border-color: $neutral;
+        & svg{
+            & path{
+                stroke: $neutral;
+            }
+        }
+    }
+}

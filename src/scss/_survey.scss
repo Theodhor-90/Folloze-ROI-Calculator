@@ -1,0 +1,39 @@
+.survey{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 64px 102px;
+    & .buttons-wrapper{
+        margin-bottom: 24px;
+    }
+
+    & .mobile-only{
+        display: none;
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, md)) {
+        padding: 128px 48px 48px;
+        &.showing-results{
+            padding: 48px;
+        }
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, md)) {
+        padding: 48px 28px 24px 28px;
+        & .mobile-only{
+            display: block;
+            width: 100%;
+            margin-bottom: 72px;
+        }
+        & .buttons-wrapper{
+            flex-direction: column-reverse;
+            & .button{
+                margin-left: 0;
+                margin-right: 0;
+                &:first-child{
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+

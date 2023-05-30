@@ -1,0 +1,41 @@
+$primary: #0077FF!default!default;
+$primary-light: #009EFF!default;
+$primary-lightest: #00CCFF!default;
+$primary-strong: #004BDE!default;
+$primary-strongest: #043BA5!default;
+
+$white: #FFFFFF!default;
+$black: #071428!default;
+
+$neutral: #6B7E9D!default;
+$neutral-light: #A1BCF3!default;
+$neutral-lightest: #F3F9FD!default;
+$neutral-strong: #2C3D59!default;
+$neutral-strongest: #1C293F!default;
+
+$gradient-blue: linear-gradient(45.99deg, #7F45E1 9.72%, #7A47E2 13.13%, #2369F7 71.57%, #0077FF 98.1%)!default;
+$gradient-orange: linear-gradient(45.99deg, #FF469E 1.89%, #FDBA0D 98.1%)!default;
+$gradient-green: linear-gradient(45.99deg, #11D175 10.59%, #10C97B 22.42%, #0DB58B 40.26%, #0993A6 61.89%, #0364CA 86.28%, #004BDE 98.1%)!default;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 375px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1232px,
+    xxl: 1376px,
+) !default;
+
+$spacer: 8px !default;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.5, // 4px
+    2: $spacer, // 8px
+    3: $spacer * 2, // 16px
+    4: $spacer * 3, // 24px
+    5: $spacer * 4, //32px
+    6: $spacer * 6, // 48px
+    7: $spacer * 8, // 64px
+    8: $spacer * 12, // 96px
+    9: $spacer * 16, // 128px
+) !default;

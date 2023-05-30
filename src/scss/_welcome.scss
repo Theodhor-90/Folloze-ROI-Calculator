@@ -1,0 +1,173 @@
+.welcome {
+    padding: map-get($map: $spacers, $key: 6) map-get($map: $spacers, $key: 7);
+    overflow-y: auto;
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        padding: 48px 58px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & .eyebrow,
+        & .header,
+        & .description {
+            text-align: center;
+        }
+        & .folloze-logo{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, md)) {
+        padding: 40px 28px;
+    }
+
+    & .main-container {
+        & .welcome-content {
+            max-width: 430px;
+            @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                max-width: 560px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+
+    & .eyebrow {
+        margin-top: 48px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.06em;
+        color: $primary-strong;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            font-size: 18px;
+            line-height: 32px;
+            margin-top: map-get($map: $spacers, $key: 5);
+        }
+        @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: map-get($map: $spacers, $key: 2);
+            margin-top: map-get($map: $spacers, $key: 3);
+            letter-spacing: 0.05em;
+        }
+    }
+    & .header {
+        font-weight: 400;
+        color: $neutral-strong;
+        font-size: 40px;
+        line-height: 60px;
+        margin-bottom: map-get($map: $spacers, $key: 3);
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            font-size: 40px;
+            line-height: 48px;
+        }
+        @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            font-size: 30px;
+            line-height: 42px;
+            margin-bottom: map-get($map: $spacers, $key: 2);
+        }
+    }
+
+    & .description {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: map-get($map: $spacers, $key: 6);
+        color: $neutral;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            font-size: 18px;
+            line-height: 28px;
+            margin-bottom: map-get($map: $spacers, $key: 5);
+        }
+        @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: map-get($map: $spacers, $key: 4);
+        }
+        @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+            max-width: 380px;
+        }
+    }
+
+    & .welcome-buttons {
+        display: flex;
+        width: 100%;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            flex-direction: column;
+            & .button {
+                width: fit-content;
+            }
+            align-items: center;
+        }
+        @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            display: block;
+            & .button {
+                width: 100%;
+            }
+        }
+    }
+
+    & .clock-wrapper {
+        padding: map-get($map: $spacers, $key: 2)
+            map-get($map: $spacers, $key: 3);
+        @media screen and (max-width: map-get($grid-breakpoints, md)) {
+            padding: map-get($map: $spacers, $key: 2);
+            justify-content: center;
+            margin-top: map-get($map: $spacers, $key: 3);
+        }
+        & .clock {
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            background-color: $white;
+            margin-right: 8px;
+            & svg {
+                height: 24px;
+                width: 24px;
+            }
+            box-shadow: 0px 9.6px 26.4px -7.2px rgba(24, 39, 75, 0.12),
+                0px 16.8px 76.8px -4.8px rgba(24, 39, 75, 0.12);
+        }
+        & .text {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 22px;
+            color: $black;
+        }
+    }
+
+    & .image-background-container {
+        width: 100%;
+        margin-top: map-get($map: $spacers, $key: 6);
+        display: flex;
+        align-items: center;
+        & .image-background {
+            width: 100%;
+            padding-top: 75%;
+            background-image: url(../assets//welcome.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, lg)) {
+    .welcome{
+        display: flex;
+        & .welcome-left {
+            width: 45%;
+        }
+        & .welcome-right {
+            width: 55%;
+            background-image: url(../assets/welcome.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+    }
+}

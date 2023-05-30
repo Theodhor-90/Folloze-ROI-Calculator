@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.fw {
+    width: 100%;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.hide-mobile {
+    @media screen and (max-width: map-get($grid-breakpoints, md)) {
+        display: none;
+    }
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.app {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url(./assets/gradientOuter.png);
+    background-size: cover;
+    padding: map-get($map: $spacers, $key: 7) map-get($map: $spacers, $key: 6);
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        background-image: url(./assets//gradientTablet.png);
+        padding: 64px 44px;;
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, md)) {
+        padding: 0;
+    }
+}
+
+.folloze-button {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 16px;
+    font-feature-settings: 'ss04' on, 'ss03' on;
+}
+
+.folloze-container {
+    position: relative;
+    min-height: 675px;
+    max-width: 1168px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(17, 24, 39, 0.1),
+        0px 4px 6px rgba(17, 24, 39, 0.05);
+    transition: all 0.3s;
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        height: calc(100vh - (map-get($spacers, 7) * 2));
+        background-color: white;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        background-image: url(./assets/gradientInner.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom right;
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, md)) {
+        min-height: 100vh;
+        border-radius: 0;
+    }
+}
+
+.full-fluid{
+    height: 100%;
+    width: 100%;
+}

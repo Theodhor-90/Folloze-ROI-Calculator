@@ -1,0 +1,203 @@
+.results {
+    width: 100%;
+    display: flex;
+    & .title {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 42px;
+        color: $neutral-strong;
+    }
+    & .description {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: $neutral;
+        margin-top: 8px;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            margin-bottom: 24px;
+        }
+    }
+
+    & .tag {
+        font-size: 16px;
+        line-height: 20px;
+        color: $neutral;
+    }
+
+    & .icon-group {
+        padding: 12px 24px 12px 8px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $neutral-light;
+        cursor: pointer;
+        width: 100%;
+        &:first-child {
+            border-top: 1px solid $neutral-light;
+        }
+        & .accordion-control {
+            width: 32px;
+            height: 32px;
+            margin-left: auto;
+            @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+                display: none;
+            }
+        }
+        & .icon-container {
+            height: 48px;
+            width: 48px;
+            margin-right: 16px;
+        }
+
+        & .group-container {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.01em;
+            color: #004bde;
+        }
+        &.active {
+            @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+                background-color: $neutral-lightest;
+            }
+            @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+                border-bottom: none;
+            }
+        }
+    }
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        & .left,
+        & .right {
+            width: 50%;
+        }
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        & .left {
+            width: 100%;
+        }
+    }
+    & .right {
+        padding: 16px;
+        padding-left: 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            display: none;
+        }
+    }
+}
+
+.toggled {
+    & .result-card {
+        & .card-value {
+            background: linear-gradient(45.99deg, #ff469e 1.89%, #fdba0d 98.1%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+.result-card {
+    padding: map-get($map: $spacers, $key: 3);
+    background: #ffffff;
+    box-shadow: 0px 4px 8px rgba(95, 100, 118, 0.08),
+        0px 4px 16px rgba(215, 215, 215, 0.25);
+    border-radius: 10px;
+    width: 100%;
+    & .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .icon-container {
+            height: 24px;
+            width: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    & .card-description {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 20px;
+        color: $neutral;
+    }
+
+    & .card-value {
+        font-size: 40px;
+        line-height: 48px;
+        color: #11d175;
+    }
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.switcher-group {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 24px;
+    &.hide-tablet {
+        @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+            display: none;
+        }
+    }
+    &.hide-desktop {
+        @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        justify-content: center;
+    }
+    & .switcher {
+        margin: 0 16px;
+        height: 24px;
+        width: 60px;
+        border-radius: 12px;
+        background-color: #ececec;
+        cursor: pointer;
+
+        & .switcher-thumb {
+            height: 32px;
+            width: 32px;
+            border-radius: 50px;
+            background: $primary;
+            transition: all 0.3s;
+            transform: translate(0, -4px);
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.24);
+        }
+        &.toggled {
+            & .switcher-thumb {
+                transform: translate(28px, -4px);
+                background: linear-gradient(
+                    45.99deg,
+                    #ff469e 1.89%,
+                    #fdba0d 98.1%
+                );
+            }
+        }
+    }
+}
+
+.hide-desktop {
+    @media screen and (min-width: map-get($grid-breakpoints, lg)) {
+        display: none;
+    }
+    background-color: white;
+}
+
+.accordion-content {
+    @media screen and (max-width: map-get($grid-breakpoints, lg)) {
+        padding-bottom: 24px;
+        overflow: hidden;
+    }
+}
+
+.mt-card{
+    margin-top: map-get($map: $spacers, $key: 5);
+    &:first-child {
+        margin-top: 0;
+    }
+}
